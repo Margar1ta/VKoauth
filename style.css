@@ -1,0 +1,16 @@
+.btn{
+  background-color: #34828f;
+  color: white;
+padding: 30px 15px;
+}
+.container{
+  margin:15px;
+  background-color: #b6967c;
+  border-radius:15px;
+  padding: 30px 15px;
+  text-align: center;
+  min-width: 200px;
+  max-width: 400px;
+  min-height: 150px;
+  max-height: 4000px;
+}
