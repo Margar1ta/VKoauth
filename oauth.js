@@ -6,6 +6,7 @@ var code=params['code'];
   if(code!=undefined){
   var xhr = new XMLHttpRequest();
   var xhr_friends = new XMLHttpRequest();
+    alert( code );
   xhr.open('GET', 'https://oauth.vk.com/access_token?client_id=6023864&client_secret=bHOZlrIcrVT6rUCUmNbV&redirect_uri=https://margar1ta.github.io/VKoauth/&code='+code, false);
   xhr.send();
     if (xhr.status != 200) {
