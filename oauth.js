@@ -3,7 +3,29 @@ function oauth(){
   var params=getParams();
 
 var code=params['code'];
+  if(code!=undefined){
+  var xhr = new XMLHttpRequest();
+  var xhr_friends = new XMLHttpRequest();
+  xhr.open('GET', 'https://oauth.vk.com/access_token?client_id=6023864&client_secret=bHOZlrIcrVT6rUCUmNbV&redirect_uri=https://margar1ta.github.io/VKoauth/&code=452ea4dfc26e213d5a', false);
+  xhr.send();
+    if (xhr.status != 200) {
+    alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+} else {
+   var response = JSON.parse(xhr.responseText ); // responseText -- текст ответа.
   
+  
+   xhr_friends.open('GET', 'https://api.vk.com/method/friends.get?order=name&count=5&offset=0&fields=city&name_case=nom&version=5.64&access_token=533bacf01e11f55b536a565b57531ac114461ae8736d6506a3', false);
+  xhr_friends.send();
+  if (xhr_friends.status != 200) {
+    alert( xhr_friends.status + ': ' + xhr_friends.statusText ); // пример вывода: 404: Not Found
+} else {
+  var friends = JSON.parse(xhr_friends.responseText );
+  
+}
+  
+  
+}
+  }
 }
 
 
