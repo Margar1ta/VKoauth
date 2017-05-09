@@ -19,7 +19,8 @@ var code=params['code'];
   if (xhr_friends.status != 200) {
     alert( xhr_friends.status + ': ' + xhr_friends.statusText ); // пример вывода: 404: Not Found
 } else {
-  var friends = JSON.parse(xhr_friends.responseText );
+  var friends = JSON.parse(xhr_friends.responseText ).response.items;
+   alert( friends[0].id );
   
 }
   
