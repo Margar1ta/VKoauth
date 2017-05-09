@@ -1,3 +1,3 @@
 function oauth(){
-  
+  alert( "Привет" );
 }
