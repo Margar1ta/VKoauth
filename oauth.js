@@ -12,9 +12,10 @@ var code=params['code'];
     alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 } else {
    var response = JSON.parse(xhr.responseText ); // responseText -- текст ответа.
+ var access_token=response.access_token;
   
   
-   xhr_friends.open('GET', 'https://api.vk.com/method/friends.get?order=name&count=5&offset=0&fields=city&name_case=nom&version=5.64&access_token=533bacf01e11f55b536a565b57531ac114461ae8736d6506a3', false);
+   xhr_friends.open('GET', 'https://api.vk.com/method/friends.get?order=name&count=5&offset=0&fields=city&name_case=nom&version=5.64&access_token='+access_token, false);
   xhr_friends.send();
   if (xhr_friends.status != 200) {
     alert( xhr_friends.status + ': ' + xhr_friends.statusText ); // пример вывода: 404: Not Found
